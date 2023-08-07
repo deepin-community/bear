@@ -1,15 +1,55 @@
-Source: template-repository
-Section: unknown
+Source: bear
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Section: devel
+Maintainer: Sebastian Ramacher <sramacher@debian.org>
+Build-Depends:
+ cmake,
+ debhelper-compat (= 13),
+ libfmt-dev,
+ libgmock-dev,
+ libgrpc++-dev,
+ libgtest-dev,
+ libprotobuf-dev,
+ libspdlog-dev,
+ libsqlite3-dev,
+ nlohmann-json3-dev,
+ pkg-config,
+ protobuf-compiler-grpc
+Standards-Version: 4.6.2
+Homepage: https://github.com/rizsotto/Bear
+Vcs-Browser: https://salsa.debian.org/sramacher/bear
+Vcs-Git: https://salsa.debian.org/sramacher/bear.git
+Rules-Requires-Root: no
 
-Package: template-repository
+Package: bear
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends:
+ libear (= ${binary:Version}),
+ ${shlibs:Depends},
+ ${misc:Depends}
+Description: generate compilation database for Clang tooling
+ Bear records the flags passed to the compiler for each translation unit and
+ stores them in a JSON file. This file can be used by Clang's tooling interface
+ and programs like clang-check to process a translation unit.
+ .
+ cmake supports the generation of JSON compilation databases out of the box.
+ For any other build system that does not support this, Bear can be used
+ instead to intercept the invocation of the compiler.
+
+Package: libear
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends}
+Description: generate compilation database for Clang tooling (wrapper library)
+ Bear records the flags passed to the compiler for each translation unit and
+ stores them in a JSON file. This file can be used by Clang's tooling interface
+ and programs like clang-check to process a translation unit.
+ .
+ cmake supports the generation of JSON compilation databases out of the box.
+ For any other build system that does not support this, Bear can be used
+ instead to intercept the invocation of the compiler.
+ .
+ This is the required library for wrapping system calls.

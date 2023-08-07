@@ -1,5 +1,397 @@
-template-repository (1.0-1) unstable; urgency=medium
+bear (3.1.2-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version 3.1.2
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 02 Jun 2023 21:24:29 +0200
+
+bear (3.1.1-1) unstable; urgency=medium
+
+  * New upstream version 3.1.1
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 01 Mar 2023 22:51:20 +0100
+
+bear (3.1.0-1) unstable; urgency=medium
+
+  * New upstream version 3.1.0
+  * Update copyright years
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Thu, 16 Feb 2023 23:14:14 +0100
+
+bear (3.0.21-1) unstable; urgency=medium
+
+  * New upstream version 3.0.21
+  * debian/control: Bump Standards-Version
+  * debian/watch: Use api.github.com
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 04 Jan 2023 20:34:30 +0100
+
+bear (3.0.20-1) unstable; urgency=medium
+
+  * New upstream version 3.0.20
+    - Fix FTBFS with fmtlib 9 (Closes: #1014682)
+  * debian/control: Bump Standards-Version
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 30 Jul 2022 22:37:28 +0200
+
+bear (3.0.19-1) unstable; urgency=medium
+
+  * New upstream version 3.0.19
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 28 Mar 2022 20:22:41 +0200
+
+bear (3.0.18-1) unstable; urgency=medium
+
+  * New upstream version 3.0.18
+  * debian/copyright: Update copyright years
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 05 Jan 2022 17:28:20 +0100
+
+bear (3.0.17-1) unstable; urgency=medium
+
+  * New upstream version 3.0.17
+  * debian/rules: Enable multilib support explicitly
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 19 Nov 2021 20:44:49 +0100
+
+bear (3.0.16-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 29 Sep 2021 21:22:05 +0200
+
+bear (3.0.15-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/rules: Update install location for helper files
+  * debian/control: Bump Standards-Version
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 08 Sep 2021 14:11:44 +0200
+
+bear (3.0.8-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/copyright: Bump copyright years
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 05 Feb 2021 22:33:05 +0100
+
+bear (3.0.7-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control: Add B-D on libsqlite3-dev
+  * debian/tests/control: Drop superficial restriction
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Thu, 14 Jan 2021 21:57:15 +0100
+
+bear (3.0.6-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 02 Jan 2021 09:58:45 +0100
+
+bear (3.0.5-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 28 Dec 2020 19:31:47 +0100
+
+bear (3.0.4-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 14 Dec 2020 21:52:31 +0100
+
+bear (3.0.3-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/tests: Fix smoke test
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 23 Nov 2020 22:37:28 +0100
+
+bear (3.0.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control: Bump Standards-Version
+  * debian/: Adapt to new upstream version
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 22 Nov 2020 23:29:03 +0100
+
+bear (2.4.4-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository.
+
+  [ Sebastian Ramacher ]
+  * New upstream release
+  * debian/control: Bump debhelper compat to 13
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 13 Sep 2020 11:11:12 +0200
+
+bear (2.4.3-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Use correct machine-readable copyright file URI.
+  * Update standards version to 4.4.1, no changes needed.
+  * Set upstream metadata fields: Repository, Repository-Browse.
+
+  [ Sebastian Ramacher ]
+  * New upstream release
+  * debian/control: Bump Standards-Version
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 27 Jan 2020 23:39:31 +0100
+
+bear (2.4.2-2) unstable; urgency=medium
+
+  * debian/copyright: List Collabora instead of Simon McVittie
+  * debian/tests: Fix encoding and remove ccache from PATH
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 01 Sep 2019 11:32:27 +0200
+
+bear (2.4.2-1) unstable; urgency=medium
+
+  [ Sebastian Ramacher ]
+  * New upstream release.
+  * debian/patches: Removed, no longer needed.
+  * debian/control: Drop python B-D (Closes: #936195).
+  * debian/copyright: Add Simon McVittie.
+  * debian/rules:
+    - Force python interpreter to be python3.
+    - Install upstream changelog.
+  * debian/bear.maintscript: Removed, obsolete.
+  * debian/bear.install: Actually install bash completion.
+
+  [ Simon McVittie ]
+  * d/tests: Add a smoke-test (Closes: #934606)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 30 Aug 2019 19:21:06 +0200
+
+bear (2.4.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    - Bump Standards-Version.
+    - B-D on bash-completion to install bash completion.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 05 Aug 2019 23:12:09 +0200
+
+bear (2.4.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 06 Jul 2019 13:04:24 +0200
+
+bear (2.4.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    - Bump Standards-Version.
+    - Remove obsolete Breaks+Replaces.
+  * debian/: Bump debhelper compat to 12.
+  * debian/copyright: Bump copyright years.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 10 Jun 2019 22:47:09 +0200
+
+bear (2.3.13-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control: Bump Standards-Version.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 05 Sep 2018 23:53:02 +0200
+
+bear (2.3.12-1) unstable; urgency=medium
+
+  * New ustream release.
+  * debian/control
+    - Bump Standards-Version.
+    - Set Rules-Requires-Root: no.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 14 Aug 2018 15:43:29 +0200
+
+bear (2.3.11-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/patches: Removed no longer needed patches.
+  * debian/rules: Adopt to upstream changes.
+  * debian/: Bump debhelper compat to 11.
+  * debian/control:
+    - Bump Standards-Version.
+    - Move to salsa.debian.org.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 06 Jan 2018 12:03:46 +0100
+
+bear (2.3.9-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Fix locales handling. (Closes: #880039)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 03 Nov 2017 14:31:30 -0500
+
+bear (2.3.7-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control: Bump Standards-Version.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 11 Oct 2017 22:24:13 +0200
+
+bear (2.3.6-2) unstable; urgency=medium
+
+  * debian/control:
+    - Bump Standards-Version.
+    - Remove libqt4-dev from Build-Depends to not block Qt4 removal.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 05 Sep 2017 20:44:01 +0200
+
+bear (2.3.6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control: Bump Standards-Version.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 04 Jul 2017 19:47:11 +0200
+
+bear (2.3.5-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 16 Jun 2017 00:35:35 +0200
+
+bear (2.3.5-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 12 Jun 2017 21:53:07 +0200
+
+bear (2.3.4-1) experimental; urgency=medium
+
+  * New upstream release.
+  * debian/patches: Refreshed and remove patches included upstream.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 25 Apr 2017 20:53:13 +0200
+
+bear (2.3.2-1) experimental; urgency=medium
+
+  [ Sebastian Ramacher ]
+  * New upstream release.
+  * debian/copyright: Update copyright years.
+
+  [ Norbert Lange ]
+  * Split library from main python script to allow easier use in multi-arch
+    scenarious. (Closes: #856333)
+  * Adjust the default libear.so path to use the ${LIB} Variable
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 24 Apr 2017 21:23:47 +0200
+
+bear (2.2.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/{control,compat}: Bump debhelper compat to 10.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 19 Oct 2016 19:01:50 +0200
+
+bear (2.2.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control: Bump Standards-Version.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 12 Jun 2016 12:31:43 +0200
+
+bear (2.1.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    - Bump Standards-Version to 3.9.7.
+    - Update Vcs-*.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 17 Feb 2016 20:17:47 +0100
+
+bear (2.1.3-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 16 Jan 2016 13:24:03 +0100
+
+bear (2.1.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Thu, 08 Oct 2015 20:21:10 +0200
+
+bear (2.1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 08 Sep 2015 10:42:39 +0200
+
+bear (2.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/patches/remove-rpath.patch: Remove RPATH.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 08 Aug 2015 17:17:40 +0200
+
+bear (2.0.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 23 Jun 2015 23:26:26 +0200
+
+bear (2.0.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Upload to unstable.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 07 Apr 2015 22:17:25 +0200
+
+bear (2.0.2-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 16 Feb 2015 18:35:15 +0100
+
+bear (2.0.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    - Bump Standards-Version to 3.9.6.
+    - Build-Depends:
+      + Add python3 and dh-python for new Python based bear.
+      + Remove no longer needed libconfig-dev.
+    - bear Depends: Add ${python3:Depends}.
+  * debian/rules:
+    - Build with dh_python3.
+    - Remove no longer used configure options.
+  * debian/bear.maintscript: Remove obsolete conffile.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 26 Jan 2015 23:24:45 +0100
+
+bear (1.4.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 26 May 2014 21:11:21 +0200
+
+bear (1.4.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 11 May 2014 17:07:56 +0200
+
+bear (1.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/patches: Drop all patches, not needed anymore.
+  * debian/copyright: Update copyright years.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 20 Jan 2014 02:30:59 +0100
+
+bear (1.3-2) unstable; urgency=medium
+
+  * debian/patches/vaarg-handling.patch: Add patch from upstream to fix vaarg
+    handling. (Closes: #733768)
+  * debian/copyright: Update copyright years.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 01 Jan 2014 15:33:56 +0100
+
+bear (1.3-1) unstable; urgency=low
+
+  * Initial release. (Closes: #732645)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 20 Dec 2013 02:32:45 +0100
