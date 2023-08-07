@@ -1,0 +1,4 @@
+version=4
+opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*)%bear-$1.tar.gz%,searchmode=plain" \
+  https://api.github.com/repos/rizsotto/Bear/releases \
+  https://api.github.com/repos/rizsotto/Bear/tarball/@ANY_VERSION@

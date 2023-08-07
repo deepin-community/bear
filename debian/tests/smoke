@@ -1,0 +1,44 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# Copyright © 2019 Collabora Ltd.
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+import json
+import os
+import subprocess
+import tempfile
+
+if __name__ == '__main__':
+    with tempfile.TemporaryDirectory() as tmpdir:
+        with open(os.path.join(tmpdir, 'Makefile'), 'w') as writer:
+            writer.write('''\
+hi: hi.c
+\t$(CC) -DMAGIC=more_magic -o$@ $<
+''')
+
+        with open(os.path.join(tmpdir, 'hi.c'), 'w') as writer:
+            writer.write('''\
+#include <stdio.h>
+
+int main (void)
+{
+  puts ("hi, world!");
+  return 0;
+}
+''')
+
+        # see d/rules
+        env = dict(os.environ)
+        if 'PATH' in env:
+            env['PATH'] = ':'.join(p for p in env['PATH'].split(':') if not p.startswith('/usr/lib/ccache'))
+
+        subprocess.check_call(['bear', '--', 'make'], cwd=tmpdir, env=env)
+
+        with open(os.path.join(tmpdir, 'compile_commands.json')) as reader:
+            commands = json.load(reader)
+
+        assert len(commands) == 1, commands
+        command = commands[0]
+        assert '-DMAGIC=more_magic' in command['arguments'], command
+        assert command['directory'] == tmpdir, command
+        assert command['file'] == os.path.join(tmpdir, 'hi.c'), command

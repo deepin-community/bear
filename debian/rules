@@ -2,3 +2,14 @@
 
 %:
 	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DENABLE_MULTILIB=ON
+
+override_dh_auto_test:
+	# The tests fail if /usr/lib/ccache is in PATH so we remove it here. The tests
+	# do not fail if CC or CXX are set to use ccache.
+	PATH=$(shell echo $$PATH | \
+		sed -e 's;:/usr/lib/ccache/\?;;' \
+			-e 's;^/usr/lib/ccache/\?;;') \
+		dh_auto_test
