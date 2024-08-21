@@ -13,9 +13,9 @@ Build-Depends:
  libspdlog-dev,
  libsqlite3-dev,
  nlohmann-json3-dev,
- pkg-config,
+ pkgconf,
  protobuf-compiler-grpc
-Standards-Version: 4.6.2
+Standards-Version: 4.7.0
 Homepage: https://github.com/rizsotto/Bear
 Vcs-Browser: https://salsa.debian.org/sramacher/bear
 Vcs-Git: https://salsa.debian.org/sramacher/bear.git

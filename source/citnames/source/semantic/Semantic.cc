@@ -1,4 +1,4 @@
-/*  Copyright (C) 2012-2023 by László Nagy
+/*  Copyright (C) 2012-2024 by László Nagy
     This file is part of Bear.
 
     Bear is a tool to generate compilation database for clang tooling.
@@ -17,15 +17,18 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "config.h"
 #include "semantic/Semantic.h"
 
 #include <fmt/format.h>
-
+#ifdef HAVE_FMT_STD_H
+#include <fmt/std.h>
+#else
 namespace fmt {
-
     template <>
     struct formatter<fs::path> : formatter<std::string> {};
 }
+#endif
 
 namespace cs::semantic {
 
