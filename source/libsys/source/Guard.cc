@@ -1,4 +1,4 @@
-/*  Copyright (C) 2012-2023 by László Nagy
+/*  Copyright (C) 2012-2024 by László Nagy
     This file is part of Bear.
 
     Bear is a tool to generate compilation database for clang tooling.
@@ -20,6 +20,7 @@
 #include "Guard.h"
 #include "libsys/Environment.h"
 
+#include <algorithm>
 #include <cstring>
 #include <functional>
 
